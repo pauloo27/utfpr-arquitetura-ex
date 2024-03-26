@@ -1,11 +1,12 @@
 export class Funcionario {
   #salario;
 
-  constructor(salario) {
+  constructor(nome, salario) {
+    this.nome = nome;
     this.#salario = salario;
   }
 
-  getSalario() {
+  calcularSalarioTotal() {
     return this.#salario;
   }
 }
