@@ -1,6 +1,6 @@
-import { GerenciaContatos } from "./GerenciadorContatos.js";
+import { GerenciadorContatos } from "./GerenciadorContatos.js";
 
-const gerenciadorContatos = new GerenciaContatos();
+const gerenciadorContatos = new GerenciadorContatos();
 
 function showUsage() {
   console.log("Uso: node src/index.js [comando]");

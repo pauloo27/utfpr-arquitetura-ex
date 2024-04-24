@@ -7,7 +7,7 @@ import { BinarySearchStrategy } from "./search/BinarySearchStrategy.js";
   GerenciaContatos é uma classe que tem como responsabilidade gerenciar os 
   contatos. Ela é uma Fachada para a classe de armazenamento e de busca.
 */
-export class GerenciaContatos {
+export class GerenciadorContatos {
   storage;
 
   constructor() {
