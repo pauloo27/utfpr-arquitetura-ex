@@ -4,7 +4,17 @@ export default class CidadesHTMLReport {
   }
 
   reportar() {
-    let result = `<!DOCTYPE HTML>
+    let result = this.cidades.reduce(this.appendCidade, this.getHeader());
+    result += this.getFooter();
+    return result;
+  }
+
+  appendCidade(result, cidade) {
+    return (result += "     <li>" + cidade["Nome"] + "</li>\n");
+  }
+
+  getHeader() {
+    return `<!DOCTYPE HTML>
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -14,16 +24,12 @@ export default class CidadesHTMLReport {
     <h1>Relatório de Nomes de Cidades</h1>
     <ul>
 `;
+  }
 
-    for (let i = 0; i < this.cidades.length; i++) {
-      result += "     <li>" + this.cidades[i]["Nome"] + "</li>\n";
-    }
-
-    result += `
+  getFooter() {
+    return `
     </ul>
   </body>
 </html>`;
-
-    return result;
   }
 }

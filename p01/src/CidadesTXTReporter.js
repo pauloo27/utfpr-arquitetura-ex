@@ -4,14 +4,22 @@ export default class CidadesTXTReporter {
   }
 
   reportar() {
-    let result = `Relatório de Nomes de Cidades
+    let result = this.cidades.reduce(this.appendCidade, this.getHeader());
+    result += this.getFooter();
+    return result;
+  }
+
+  appendCidade(result, cidade) {
+    return (result += "* " + cidade["Nome"] + "\n");
+  }
+
+  getHeader() {
+    return `Relatório de Nomes de Cidades
 =============================
 `;
+  }
 
-    for (let i = 0; i < this.cidades.length; i++) {
-      result += "* " + this.cidades[i]["Nome"] + "\n";
-    }
-
-    return result;
+  getFooter() {
+    return "";
   }
 }
