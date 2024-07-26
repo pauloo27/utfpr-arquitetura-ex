@@ -1,12 +1,11 @@
-import * as fs from 'node:fs';
+import * as fs from "node:fs";
 
 export default class CidadesHTMLReport {
-
-  ler (caminho) {
+  ler(caminho) {
     this.cidades = fs.readFileSync(caminho);
   }
 
-  parse () {
+  parse() {
     this.cidades = JSON.parse(this.cidades);
   }
 
@@ -24,7 +23,7 @@ export default class CidadesHTMLReport {
   `;
 
     for (let i = 0; i < this.cidades.length; i++) {
-      result += '     <li>' + this.cidades[i]['Nome'] + '</li>\n';
+      result += "     <li>" + this.cidades[i]["Nome"] + "</li>\n";
     }
 
     result += `
