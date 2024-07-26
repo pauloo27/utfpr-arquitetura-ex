@@ -1,4 +1,4 @@
-import CidadesHTMLReport from "./CidadesHTMLReporter.js";
+import CidadesHTMLReporter from "./CidadesHTMLReporter.js";
 import CidadesTXTReporter from "./CidadesTXTReporter.js";
 
 const err =
@@ -14,7 +14,7 @@ export default class AbstractFactory {
   createReporter(cidades) {
     switch (this.fileType.toLowerCase()) {
       case "html":
-        return new CidadesHTMLReport(cidades);
+        return new CidadesHTMLReporter(cidades);
       case "txt":
         return new CidadesTXTReporter(cidades);
       default:

@@ -1,4 +1,4 @@
-export default class CidadesHTMLReport {
+export default class CidadesHTMLReporter {
   constructor(cidades) {
     this.cidades = cidades;
   }
