@@ -10,7 +10,7 @@ projeto.
 
 ### 2) Implementação de testes
 
-Foram implementados testes para garantir que o `output` dos Exporters de HTML
+Foram implementados testes para garantir que o `output` dos Reporter de HTML
 e TXT estejam no formato esperado. Essa melhoria ajuda a garantir que 
 refatorações futuras não alterem o comportamento do software.
 
@@ -23,7 +23,12 @@ compreensão do código.
 
 ## Design Patterns adotadas
 
-### 1) Strategy
+### 1) Strategy (Comportamental)
 
-### 2) Abstract Factory
+### 2) Abstract Factory (Criacional)
 
+Foi adotada a pattern de abstract factory para a criação dos objetos Report,
+com isso, é possível criar diferentes tipos de Report (HTML e TXT) sem a 
+necessidade de alterar o código que os utiliza.
+
+### 3) Facade (Estrutural)
