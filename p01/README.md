@@ -32,3 +32,7 @@ com isso, é possível criar diferentes tipos de Report (HTML e TXT) sem a
 necessidade de alterar o código que os utiliza.
 
 ### 3) Facade (Estrutural)
+
+Para simplificar o uso das classes de Report, foi criada a classe `ReportFacade`
+que abstrai o uso das classes de Reader, Parser e Reporter.
+
