@@ -1,12 +1,6 @@
-import * as fs from "node:fs";
-
 export default class CidadesTXTReporter {
-  ler(caminho) {
-    this.cidades = fs.readFileSync(caminho);
-  }
-
-  parse() {
-    this.cidades = JSON.parse(this.cidades);
+  constructor(cidades) {
+    this.cidades = cidades;
   }
 
   reportar() {

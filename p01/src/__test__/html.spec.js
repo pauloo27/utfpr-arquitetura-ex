@@ -1,9 +1,12 @@
 import CidadesHTMLReport from "../CidadesHTMLReporter";
+import Parser from "../Parser";
+import Reader from "../Reader";
 
 test("html reporter", () => {
-  const reporter = new CidadesHTMLReport();
-  reporter.ler("./data/cidades-test.json");
-  reporter.parse();
+  const reader = new Reader("./data/cidades-test.json");
+  const cidades = new Parser(reader.read()).parse();
+
+  const reporter = new CidadesHTMLReport(cidades);
   const text = reporter.reportar();
 
   expect(text).toBe(`<!DOCTYPE HTML>
