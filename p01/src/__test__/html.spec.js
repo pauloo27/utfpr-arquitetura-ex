@@ -1,4 +1,4 @@
-import CidadesHTMLReporter from "../CidadesHTMLReporter";
+import HTMLReporterStrategy from "../HTMLReporterStrategy";
 import Parser from "../Parser";
 import Reader from "../Reader";
 
@@ -6,7 +6,7 @@ test("html reporter", () => {
   const reader = new Reader("./data/cidades-test.json");
   const cidades = new Parser(reader.read()).parse();
 
-  const reporter = new CidadesHTMLReporter(cidades);
+  const reporter = new HTMLReporterStrategy(cidades);
   const text = reporter.reportar();
 
   expect(text).toBe(`<!DOCTYPE HTML>

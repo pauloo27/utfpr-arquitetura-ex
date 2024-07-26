@@ -30,6 +30,10 @@ enquanto outro é responsável por gerar as linhas a partir das cidades.
 
 ### 1) Strategy (Comportamental)
 
+Foi criada a classe abstract `Report` que define o método `reportar()`. 
+As classes `HTMLReporterStrategy` e `TXTReporterStrategy` os métodos de 
+geração de header, footer e linha.
+
 ### 2) Abstract Factory (Criacional)
 
 Foi adotada a pattern de abstract factory para a criação dos objetos Report,

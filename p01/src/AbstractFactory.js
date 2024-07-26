@@ -1,5 +1,5 @@
-import CidadesHTMLReporter from "./CidadesHTMLReporter.js";
-import CidadesTXTReporter from "./CidadesTXTReporter.js";
+import HTMLReporterStrategy from "./HTMLReporterStrategy.js";
+import TXTReporterStrategy from "./TXTReporterStrategy.js";
 
 const err =
   "Apesar de fasci" +
@@ -14,9 +14,9 @@ export default class AbstractFactory {
   createReporter(cidades) {
     switch (this.fileType.toLowerCase()) {
       case "html":
-        return new CidadesHTMLReporter(cidades);
+        return new HTMLReporterStrategy(cidades);
       case "txt":
-        return new CidadesTXTReporter(cidades);
+        return new TXTReporterStrategy(cidades);
       default:
         throw err.toLowerCase();
     }

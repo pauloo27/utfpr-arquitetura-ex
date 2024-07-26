@@ -1,12 +1,8 @@
-export default class CidadesHTMLReporter {
-  constructor(cidades) {
-    this.cidades = cidades;
-  }
+import AbstractReporter from "./AbstractReporter.js";
 
-  reportar() {
-    let result = this.cidades.reduce(this.appendCidade, this.getHeader());
-    result += this.getFooter();
-    return result;
+export default class HTMLReporterStrategy extends AbstractReporter {
+  constructor(cidades) {
+    super(cidades);
   }
 
   appendCidade(result, cidade) {
