@@ -11,7 +11,8 @@ export default class CidadesTXTReporter {
 
   reportar() {
     let result = `Relatório de Nomes de Cidades
-=============================`;
+=============================
+`;
 
     for (let i = 0; i < this.cidades.length; i++) {
       result += "* " + this.cidades[i]["Nome"] + "\n";
